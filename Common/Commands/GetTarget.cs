@@ -34,7 +34,7 @@ namespace TerrariaManhunt.Common.Commands
                 caller.Reply($"{TerrariaManhunt.trackedPlayer.name} is the tracked player", Color.Yellow);
             } else
             {
-                caller.Reply("It's FREAKING null!", Color.Yellow);
+                caller.Reply("There isn't a player being targeted!", Color.Yellow);
             }
         }
     }
