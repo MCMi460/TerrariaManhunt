@@ -8,9 +8,6 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Common\Commands\GetTarget.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="Content\TrackerInfoDisplay.png" />
   </ItemGroup>
   <ItemGroup>
