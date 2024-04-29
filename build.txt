@@ -1,0 +1,3 @@
+displayName = Terraria Manhunt
+author = MCMi460
+version = 0.1
