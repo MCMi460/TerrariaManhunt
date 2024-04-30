@@ -1,10 +1,11 @@
-﻿using Terraria.ModLoader;
+﻿using Terraria;
+using Terraria.ModLoader;
 using TerrariaManhunt.Common.Players;
 using Microsoft.Xna.Framework;
 
 namespace TerrariaManhunt.Common.Commands
 {
-    public class GetTarget : ModCommand
+    public class GetTracked : ModCommand
     {
         // Executes for user
         public override CommandType Type
@@ -12,15 +13,15 @@ namespace TerrariaManhunt.Common.Commands
 
         // Executed command name
         public override string Command
-            => "getTarget";
+            => "getTracked";
 
         // Command usage description
         public override string Usage
-            => "/getTarget";
+            => "/getTracked";
 
         // Command description
         public override string Description
-            => "Gets the currently targeted user";
+            => "Gets the currently tracked user";
 
         public override void Action(CommandCaller caller, string input, string[] args)
         {
@@ -29,12 +30,14 @@ namespace TerrariaManhunt.Common.Commands
                 throw new UsageException("This command does not take any arguments!");
             }
 
-            if (TerrariaManhunt.trackedPlayer != null)
+            TrackedPlayerSync modPlayer = Main.CurrentPlayer.GetModPlayer<TrackedPlayerSync>();
+
+            if (modPlayer.trackedPlayer > -1)
             {
-                caller.Reply($"{TerrariaManhunt.trackedPlayer.name} is the tracked player", Color.Yellow);
+                caller.Reply($"{Main.player[modPlayer.trackedPlayer].name} is the tracked player", Color.Yellow);
             } else
             {
-                caller.Reply("There isn't a player being targeted!", Color.Yellow);
+                caller.Reply("There isn't a player being tracked!", Color.Yellow);
             }
         }
     }

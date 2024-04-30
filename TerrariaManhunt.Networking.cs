@@ -18,8 +18,20 @@ namespace TerrariaManhunt
             switch (msgType)
             {
                 case MessageType.UpdateTargetedPlayer:
+                    
+                    
+                    
+                    /*
+                    Logger.WarnFormat("before " + reader.BaseStream.Position);
+                    foreach (var user in Main.ActivePlayers)
+                    {
+                        reader.BaseStream.Position = 5;
+                        user.GetModPlayer<TargetedPlayerSync>().ReceivePlayerSync(reader);
+                    }*/
+
+
                     byte playerNumber = reader.ReadByte();
-                    TargetedPlayerSync player = Main.player[playerNumber].GetModPlayer<TargetedPlayerSync>();
+                    TrackedPlayerSync player = Main.player[playerNumber].GetModPlayer<TrackedPlayerSync>();
                     player.ReceivePlayerSync(reader);
 
                     if (Main.netMode == NetmodeID.Server)
@@ -29,7 +41,7 @@ namespace TerrariaManhunt
                     }
                     break;
                 default:
-                    Logger.WarnFormat("ExampleMod: Unknown Message type: {0}", msgType);
+                    Logger.WarnFormat("TerrariaManhunt: Unknown Message type: {0}", msgType);
                     break;
             }
         }

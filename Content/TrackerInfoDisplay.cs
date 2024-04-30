@@ -18,20 +18,21 @@ namespace TerrariaManhunt.Content
 
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)
         {
-            bool info = TerrariaManhunt.trackedPlayer != null;
             displayColor = Color.White;
             string displayInfo = "";
+            TrackedPlayerSync modPlayer = Main.CurrentPlayer.GetModPlayer<TrackedPlayerSync>();
 
-            if (info)
+            if (modPlayer.trackedPlayer > -1)
             {
-                if (Main.CurrentPlayer.whoAmI == TerrariaManhunt.trackedPlayer.whoAmI)
+                Player player = Main.player[modPlayer.trackedPlayer];
+                if (Main.CurrentPlayer.whoAmI == modPlayer.trackedPlayer)
                 {
                     displayColor = InfoDisplay.InactiveInfoTextColor;
                     displayInfo = "You are targeted!";
                 }
                 else
                 {
-                    displayInfo = Main.CurrentPlayer.position.X > TerrariaManhunt.trackedPlayer.position.X ? "West" : "East";
+                    displayInfo = Main.CurrentPlayer.position.X > player.position.X ? "West" : "East";
                 }
             }
             else
