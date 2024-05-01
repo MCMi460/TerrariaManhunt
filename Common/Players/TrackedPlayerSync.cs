@@ -1,9 +1,6 @@
 ﻿using System.IO;
 using Terraria;
-using System.Runtime.Serialization.Formatters.Binary;
-using log4net.Repository.Hierarchy;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace TerrariaManhunt.Common.Players
 {
@@ -24,9 +21,7 @@ namespace TerrariaManhunt.Common.Players
         public void ReceivePlayerSync(BinaryReader reader)
         {
             byte whoAmI = reader.ReadByte();
-            Main.NewText("first tracked player: " + trackedPlayer, Color.White);
             trackedPlayer = whoAmI;
-            Main.NewText("final tracked player: " + Main.player[trackedPlayer].name, Color.White);
         }
     }
 }

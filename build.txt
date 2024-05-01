@@ -1,3 +1,7 @@
 displayName = Terraria Manhunt
 author = MCMi460
 version = 0.1
+homepage = https://github.com/MCMi460/TerrariaManhunt
+hideCode = true
+hideResources = true
+buildIgnore = .vs/*, *.csproj, *.sln, obj/*, bin/*
