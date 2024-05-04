@@ -11,6 +11,7 @@ This mod includes the following features:
 - [i:5095] Damageable NPCs (to balance out the Nurse)
 - [i:224] Disabling spawn points for the Speedrunner
 - [i:2351] Disabling random teleportation potions for the Speedrunner
+- [i:3322] Expert and Master Mode drops on Normal Mode worlds
 - ...and more planned! All of the above are toggleable!
 
 Check out the GitHub page below or support me on the Steam Workshop!

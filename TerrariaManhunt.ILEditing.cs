@@ -1,6 +1,7 @@
 ﻿using MonoMod.Cil;
 using System;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 using TerrariaManhunt.Common.Players;
 
@@ -217,6 +218,101 @@ namespace TerrariaManhunt
                 // Pops the invis stat on the stack
                 c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
                 // And replaces it with true
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 1);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
+        // Returns true
+        public static void HookCanMaster(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 1);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
+        // Returns false
+        public static void HookCantMaster(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 0);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
+        // Enables loot
+        public static void HookEnableLoot(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchCall<Main>("get_expertMode"));
+                c.Index++;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 1);
+
+                c.GotoNext(i => i.MatchCall<Main>("get_masterMode"));
+                c.Index++;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 1);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
+        // Enable Master
+        public static void HookDropMaster(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchLdfld<DropAttemptInfo>("IsMasterMode"));
+                c.Index++;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 1);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
+        // Enable Expert
+        public static void HookDropExpert(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchLdfld<DropAttemptInfo>("IsExpertMode"));
+                c.Index++;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 1);
             }
             catch (Exception e)

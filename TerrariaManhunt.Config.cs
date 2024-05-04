@@ -62,6 +62,14 @@ namespace TerrariaManhunt
         [ReloadRequired]
         public bool FriendlyFire { get; set; }
 
+        [Label("[i:3322] [c/FF1919:Drop Master Mode items]")]
+        [Tooltip("This allows Master Mode items to drop, even when on a Normal Mode world.\n"
+            + "On: Master Mode lootbags/items drop.\n"
+            + "Off: Default Terraria rules are followed.")]
+        [DefaultValue(false)]
+        [ReloadRequired]
+        public bool MasterDrops { get; set; }
+
 
         [Header("Miscellaneous")]
 

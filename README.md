@@ -13,6 +13,7 @@ This mod includes the following features:
 - Damageable NPCs (to balance out the Nurse)
 - Disabling spawn points for the Speedrunner
 - Disabling random teleportation potions for the Speedrunner
+- Expert and Master Mode drops on Normal Mode worlds
 - ...and more planned! All of the above are toggleable!
 
 Happy Manhunting!
@@ -71,8 +72,6 @@ In my opinion, for the best gameplay experience:
 
 ## Planned features list
 - Hide boss spawn messages/healthbars
-	- Default: Disabled
-- Expert/Master Mode drops on Normal Mode
 	- Default: Disabled
 
 ## Todo list
