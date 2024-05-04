@@ -76,5 +76,4 @@ In my opinion, for the best gameplay experience:
 
 ## Todo list
 
-- Hide player health on cursor hover
-- Fix projectiles on friendly-fire mode
+- Fix projectiles (+more) on friendly-fire mode

@@ -42,6 +42,7 @@ namespace TerrariaManhunt
             if (settings.HideHealthBars)
             {
                 IL_Main.DrawInterface_14_EntityHealthBars += HookDrawHealthBars;
+                IL_Main.DrawMouseOver += HookHideHoverHealth;
             }
             if (settings.MasterDrops)
             {

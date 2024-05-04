@@ -226,6 +226,29 @@ namespace TerrariaManhunt
             }
         }
 
+        // Hides player health text on hover
+        public static void HookHideHoverHealth(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchLdflda<Player>("statLifeMax2"));
+                c.Index += 5;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldsfld, typeof(Main).GetField(nameof(Main.player)));
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldloc_S, (byte)6);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldelem_Ref);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldfld, typeof(Player).GetField(nameof(Player.name)));
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Stloc_S, (byte)9);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
         // Returns true
         public static void HookCanMaster(ILContext il)
         {
