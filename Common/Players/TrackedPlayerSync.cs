@@ -8,7 +8,6 @@ namespace TerrariaManhunt.Common.Players
     public class TrackedPlayerSync : ModPlayer
     {
         public int trackedPlayer = -1;
-
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
         {
             ModPacket packet = Mod.GetPacket();

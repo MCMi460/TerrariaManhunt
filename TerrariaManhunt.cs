@@ -25,7 +25,10 @@ namespace TerrariaManhunt
                 // Minimap
                 IL_Main.DrawMap += HookDrawMinimapMarkers;
             }
-            
+            if (settings.DisallowSpawn)
+            {
+                IL_Player.ChangeSpawn += HookDisallowSpawn;
+            }
         }
     }
 }

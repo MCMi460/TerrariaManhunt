@@ -13,7 +13,7 @@ namespace TerrariaManhunt.Content
         // Determines if tracker is displayed or not
         public override bool Active()
         {
-            return Main.LocalPlayer.GetModPlayer<DisplayTrackerPlayer>().showTracker;
+            return Main.CurrentPlayer.GetModPlayer<DisplayTrackerPlayer>().showTracker;
         }
 
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)
@@ -25,7 +25,7 @@ namespace TerrariaManhunt.Content
             if (modPlayer.trackedPlayer > -1)
             {
                 Player player = Main.player[modPlayer.trackedPlayer];
-                if (Main.CurrentPlayer.whoAmI == modPlayer.trackedPlayer)
+                if (Main.myPlayer == modPlayer.trackedPlayer)
                 {
                     displayColor = InfoDisplay.InactiveInfoTextColor;
                     displayInfo = "You are targeted!";

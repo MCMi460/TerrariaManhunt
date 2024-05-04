@@ -2,6 +2,7 @@
 using System;
 using Terraria;
 using Terraria.ModLoader;
+using TerrariaManhunt.Common.Players;
 
 namespace TerrariaManhunt
 {
@@ -22,7 +23,7 @@ namespace TerrariaManhunt
                     (player.team != Main.CurrentPlayer.team) ||
                     (player.team == 0 && player.whoAmI != Main.myPlayer)
                 );
-                // If not, go to label and continue function as normal
+                // If so, go to label and continue function as normal
                 c.Emit(Mono.Cecil.Cil.OpCodes.Brfalse, label);
                 // Otherwise, prematurely end method
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
@@ -68,7 +69,7 @@ namespace TerrariaManhunt
 
                 // Check if player is on the same team
                 c.EmitDelegate<Func<int, bool>>(i => Main.player[i].team != Main.CurrentPlayer.team);
-                // If not, go to label and continue function as normal
+                // If so, go to label and continue function as normal
                 c.Emit(Mono.Cecil.Cil.OpCodes.Brfalse, label);
                 // Otherwise, prematurely end method
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 0);
@@ -96,6 +97,35 @@ namespace TerrariaManhunt
                 c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
                 // Replaces it with "false"
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 0);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
+        // Disables setting of the target's spawn point
+        public static void HookDisallowSpawn(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                var label = il.DefineLabel();
+
+                // Load the index in Main.player array
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldarg_0);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldfld, typeof(Player).GetField(nameof(Player.whoAmI)));
+
+                // Check if the current player is the target
+                c.EmitDelegate<Func<int, bool>>(i => Main.player[i].GetModPlayer<TrackedPlayerSync>().trackedPlayer == i);
+
+                // If not, move on to set the spawn point
+                c.Emit(Mono.Cecil.Cil.OpCodes.Brfalse, label);
+                // If so, prematurely end the change spawn method
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
+
+                c.MarkLabel(label);
             }
             catch (Exception e)
             {
