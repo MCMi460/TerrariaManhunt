@@ -9,8 +9,8 @@ This mod includes the following features:
 - [i:795] Friendly-fire
 - [i:867] Hidden NPC icons
 - [i:5095] Damageable NPCs (to balance out the Nurse)
-- [i:224] Disabling spawn points for speedrunner
-- [i:2351] Disabling random teleportation potions for speedrunner
+- [i:224] Disabling spawn points for the Speedrunner
+- [i:2351] Disabling random teleportation potions for the Speedrunner
 - ...and more planned! All of the above are toggleable!
 
 Check out the GitHub page below or support me on the Steam Workshop!
