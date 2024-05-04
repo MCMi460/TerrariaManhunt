@@ -38,6 +38,10 @@ namespace TerrariaManhunt
                 IL_Player.InOpposingTeam += HookOpposingTeam;
                 IL_Player.ItemCheck_MeleeHitPVP += HookMeleeCheck;
             }
+            if (settings.HideHealthBars)
+            {
+                IL_Main.DrawInterface_14_EntityHealthBars += HookDrawHealthBars;
+            }
         }
     }
 }

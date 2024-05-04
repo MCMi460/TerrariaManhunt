@@ -5,11 +5,13 @@ Play Terraria Manhunt with a working compass and so much more!
 This mod includes the following features:
 - [i:393] A working hunter compass
 - [i:264] Hidden player map icons & death icons
+- [i:29] Hidden player healthbars
+- [i:795] Friendly-fire
 - [i:867] Hidden NPC icons
 - [i:5095] Damageable NPCs (to balance out the Nurse)
 - [i:224] Disabling spawn points for speedrunner
 - [i:2351] Disabling random teleportation potions for speedrunner
-- ...and so much more planned!
+- ...and more planned! All of the above are toggleable!
 
 Check out the GitHub page below or support me on the Steam Workshop!
 

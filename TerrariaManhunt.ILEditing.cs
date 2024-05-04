@@ -203,5 +203,26 @@ namespace TerrariaManhunt
                 throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
             }
         }
+
+        // Hide all players' health bars
+        public static void HookDrawHealthBars(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchLdfld<Player>("invis"));
+                c.Index++;
+
+                // Pops the invis stat on the stack
+                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
+                // And replaces it with true
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 1);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
     }
 }
