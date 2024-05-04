@@ -18,7 +18,10 @@ namespace TerrariaManhunt
 
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ldarg_2);
                 // Check if player is on the same team
-                c.EmitDelegate<Func<Player, bool>>(player => player.team != Main.CurrentPlayer.team);
+                c.EmitDelegate<Func<Player, bool>>(player =>
+                    (player.team != Main.CurrentPlayer.team) ||
+                    (player.team == 0 && player.whoAmI != Main.myPlayer)
+                );
                 // If not, go to label and continue function as normal
                 c.Emit(Mono.Cecil.Cil.OpCodes.Brfalse, label);
                 // Otherwise, prematurely end method

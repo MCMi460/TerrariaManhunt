@@ -1,0 +1,89 @@
+TerrariaManhuntSettings: {
+	DisallowSpawn: {
+		Label: "[i:224] [c/FF00A0:Disallow target from setting spawn]"
+		Tooltip:
+			'''
+			The target can no longer set their spawn point for free teleportation.
+			On: Target cannot set their spawn point.
+			Off: Default Terraria rules are followed.
+			'''
+	}
+
+	DisableTelePot: {
+		Tooltip:
+			'''
+			Teleportation Potions' effects are replaced with those of a Recall Potion.
+			On: Teleportation Potions act like Recall Potions.
+			Off: Default Terraria rules are followed.
+			'''
+		Label: "[i:2351] [c/FF00A0:Disable Teleportation Potions]"
+	}
+
+	Headers: {
+		Miscellaneous: Miscellaneous Header
+		Damage: Damage Header
+		Visuals: Visuals Header
+	}
+
+	FriendlyFire: {
+		Tooltip:
+			'''
+			Players that share a team with you can now be caught in the cross-fire.
+			On: All players that share a team can hurt each other
+			Off: Default Terraria rules are followed.
+			'''
+		Label: "[i:795] [c/FF1919:Enable friendly-fire]"
+	}
+
+	HurtNPCs: {
+		Tooltip:
+			'''
+			This is meant to balance the nurse.
+			On: All town NPCs can be hurt by players.
+			Off: Default Terraria rules are followed.
+			'''
+		Label: "[i:5095] [c/FF1919:Enable damageable NPCs] [c/327DFF:(except for the Guide)]"
+	}
+
+	HideDeathMarkers: {
+		Label: "[i:1175] [c/32FF82:Hide death markers on map]"
+		Tooltip:
+			'''
+			Still shows death markers of players on the same team.
+			On: Unfriendly death markers are hidden.
+			Off: Default Terraria rules are followed.
+			'''
+	}
+
+	HideNPCs: {
+		Label: "[i:867] [c/32FF82:Hide NPC heads on map]"
+		Tooltip:
+			'''
+			So that the whereabouts of NPCs are not public knowledge.
+			On: All NPCs are hidden from the map entirely.
+			Off: Default Terraria rules are followed.
+			'''
+	}
+
+	HideHealthBars: {
+		Tooltip:
+			'''
+			This includes teamed players.
+			On: Other players' healthbars are hidden.
+			Off: Default Terraria rules are followed.
+			'''
+		Label: "[i:29] [c/32FF82:Hide other players' healthbars]"
+	}
+
+	HidePlayers: {
+		Tooltip:
+			'''
+			Player heads that do not share a team with you are hidden on the map.
+			On: Unfriendly player heads are hidden.
+			Off: Default Terraria rules are followed.
+			'''
+		Label: "[i:264] [c/32FF82:Hide player heads on map]"
+	}
+
+	DisplayName: Terraria Manhunt Settings
+}

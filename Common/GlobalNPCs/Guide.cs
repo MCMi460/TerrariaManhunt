@@ -7,12 +7,20 @@ namespace TerrariaManhunt.Common.GlobalNPCs
     {
         public override bool? CanBeHitByItem(NPC npc, Player player, Item item)
         {
-            return npc.TypeName != "Guide";
+            if (!ModContent.GetInstance<TerrariaManhuntSettings>().HurtNPCs || npc.TypeName == "Guide")
+            {
+                return base.CanBeHitByItem(npc, player, item);
+            }
+            return true;
         }
 
         public override bool? CanBeHitByProjectile(NPC npc, Projectile projectile)
         {
-            return npc.TypeName != "Guide";
+            if (!ModContent.GetInstance<TerrariaManhuntSettings>().HurtNPCs || npc.TypeName == "Guide")
+            {
+                return base.CanBeHitByProjectile(npc, projectile);
+            }
+            return true;
         }
     }
 }
