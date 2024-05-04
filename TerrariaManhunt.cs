@@ -4,8 +4,8 @@ using Terraria.ModLoader;
 
 namespace TerrariaManhunt
 {
-	public partial class TerrariaManhunt : Mod
-	{
+    public partial class TerrariaManhunt : Mod
+    {
         public override void Load()
         {
             TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>();

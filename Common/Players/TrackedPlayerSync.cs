@@ -7,7 +7,7 @@ namespace TerrariaManhunt.Common.Players
     // This syncs the client with the server and vice versa
     public class TrackedPlayerSync : ModPlayer
     {
-        public int trackedPlayer = -1;
+        public int trackedPlayer = 255;
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
         {
             ModPacket packet = Mod.GetPacket();

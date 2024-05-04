@@ -32,10 +32,11 @@ namespace TerrariaManhunt.Common.Commands
 
             TrackedPlayerSync modPlayer = Main.CurrentPlayer.GetModPlayer<TrackedPlayerSync>();
 
-            if (modPlayer.trackedPlayer > -1)
+            if (modPlayer.trackedPlayer < 255)
             {
                 caller.Reply($"{Main.player[modPlayer.trackedPlayer].name} is the tracked player", Color.Yellow);
-            } else
+            }
+            else
             {
                 caller.Reply("There isn't a player being tracked!", Color.Yellow);
             }

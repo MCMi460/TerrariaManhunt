@@ -22,7 +22,7 @@ namespace TerrariaManhunt.Content
             string displayInfo = "";
             TrackedPlayerSync modPlayer = Main.CurrentPlayer.GetModPlayer<TrackedPlayerSync>();
 
-            if (modPlayer.trackedPlayer > -1)
+            if (modPlayer.trackedPlayer < 255)
             {
                 Player player = Main.player[modPlayer.trackedPlayer];
                 if (Main.myPlayer == modPlayer.trackedPlayer)
