@@ -10,6 +10,7 @@ This mod includes the following features:
 - Hidden NPC icons
 - Damageable NPCs (to balance out the Nurse)
 - Disabling spawn points for speedrunner
+- Disabling random teleportation potions for speedrunner
 - ...and so much more planned!
 
 Check out the GitHub page below or support me on the Steam Workshop!

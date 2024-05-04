@@ -132,5 +132,36 @@ namespace TerrariaManhunt
                 throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
             }
         }
+
+        // Converts teleportation potions into bottled shellphones
+        public static void HookTelePot(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                var label = il.DefineLabel();
+
+                // Load the index in Main.player array
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldarg_0);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldfld, typeof(Player).GetField(nameof(Player.whoAmI)));
+
+                // Check if the current player is the target
+                c.EmitDelegate<Func<int, bool>>(i => Main.player[i].GetModPlayer<TrackedPlayerSync>().trackedPlayer == i);
+
+                // If not, move on to use the teleportation potion
+                c.Emit(Mono.Cecil.Cil.OpCodes.Brfalse, label);
+                // If so, call the shellphone method
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldarg_0);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Call, typeof(Player).GetMethod("Shellphone_Spawn"));
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
+
+                c.MarkLabel(label);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
     }
 }

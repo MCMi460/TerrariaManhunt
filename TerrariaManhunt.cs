@@ -29,6 +29,10 @@ namespace TerrariaManhunt
             {
                 IL_Player.ChangeSpawn += HookDisallowSpawn;
             }
+            if (settings.DisableTelePot)
+            {
+                IL_Player.TeleportationPotion += HookTelePot;
+            }
         }
     }
 }
