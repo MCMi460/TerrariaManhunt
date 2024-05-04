@@ -30,17 +30,14 @@ namespace TerrariaManhunt.Common.Commands
             {
                 throw new UsageException("Please specify which player to track!");
             }
-            else if (args.Length > 1)
-            {
-                throw new UsageException("Please choose one player to be tracked!\n...Multiple speedrunners is not currently supported.");
-            }
+            string trackedName = string.Join(" ", args);
 
             TrackedPlayerSync myPlayer = Main.CurrentPlayer.GetModPlayer<TrackedPlayerSync>();
 
             bool found = false;
             foreach (var player in Main.ActivePlayers)
             {
-                if (player.name == args[0])
+                if (player.name == trackedName)
                 {
                     myPlayer.trackedPlayer = player.whoAmI;
                     found = true;
