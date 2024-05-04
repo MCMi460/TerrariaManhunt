@@ -163,5 +163,45 @@ namespace TerrariaManhunt
                 throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
             }
         }
+
+        // All players are now in opposing teams for projectiles
+        public static void HookOpposingTeam(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchLdfld<Player>("team"));
+                c.Index--;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 1);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
+        // Melee weapons now hit friendly players
+        public static void HookMeleeCheck(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchLdfld<Player>("team"));
+                c.Index++;
+
+                // Pops the team on the stack
+                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
+                // And replaces it with the default team
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 0);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
     }
 }

@@ -33,6 +33,11 @@ namespace TerrariaManhunt
             {
                 IL_Player.TeleportationPotion += HookTelePot;
             }
+            if (settings.FriendlyFire)
+            {
+                IL_Player.InOpposingTeam += HookOpposingTeam;
+                IL_Player.ItemCheck_MeleeHitPVP += HookMeleeCheck;
+            }
         }
     }
 }
