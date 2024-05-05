@@ -36,8 +36,8 @@ namespace TerrariaManhunt
             }
             if (settings.FriendlyFire)
             {
-                IL_Player.InOpposingTeam += HookOpposingTeam;
-                IL_Player.ItemCheck_MeleeHitPVP += HookMeleeCheck;
+                IL_Projectile.Damage += HookTeamCheck;
+                IL_Player.ItemCheck_MeleeHitPVP += HookTeamCheck;
             }
             if (settings.HideHealthBars)
             {

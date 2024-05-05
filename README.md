@@ -75,5 +75,4 @@ In my opinion, for the best gameplay experience:
 	- Default: Disabled
 
 ## Todo list
-
-- Fix projectiles (+more) on friendly-fire mode
+...I'm taking suggestions?
