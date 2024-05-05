@@ -75,4 +75,4 @@ In my opinion, for the best gameplay experience:
 	- Default: Disabled
 
 ## Todo list
-...I'm taking suggestions?
+- Fix new players joining not receiving target player
