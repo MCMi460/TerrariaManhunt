@@ -64,9 +64,9 @@ In my opinion, for the best gameplay experience:
 <h3 id="compassCommands">Using Compass Commands</h3>
 
 1. **Must be on multiplayer**
-2. Type in the chat `/help` to see all the commands
-3. Type `/toggleTracker` to see the tracker beneath your minimap
-4. Type `/track <player name>` to target the Speedrunner
+2. Underneath the minimap is the tracker display
+3. Type in the chat `/tracker help` to see all the commands
+4. Type `/tracker set <player name>` to target the Speedrunner
 
 ---
 
