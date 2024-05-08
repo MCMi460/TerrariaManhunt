@@ -43,6 +43,15 @@ namespace TerrariaManhunt
         [ReloadRequired]
         public bool HideNPCs { get; set; }
 
+        [Label("[i:4084] [c/32FF82:Announce achievements in chat]")]
+        [Tooltip("Achievements that players receive will be publicly noted in chat.\n"
+            + "(This will also temporarily reset your achievement progress every session)\n"
+            + "On: Achievement get messages appear universally.\n"
+            + "Off: Default Terraria rules are followed.")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool AnnounceAchievements { get; set; }
+
 
         [Header("Damage")]
 

@@ -1,6 +1,7 @@
 ﻿using MonoMod.Cil;
 using System;
 using Terraria;
+using Terraria.Chat;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 using TerrariaManhunt.Common.Players;
@@ -324,5 +325,30 @@ namespace TerrariaManhunt
                 throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
             }
         }
+
+        // Blocks old achievement method
+        public static void ILHookAchievementComplete(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchCall(typeof(Terraria.Localization.Language).GetMethod(
+                    nameof(Terraria.Localization.Language.GetTextValue), new Type[] { typeof(string), typeof(object) })));
+                c.Index++;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Newobj, typeof(ChatMessage).GetConstructor(new Type[] { typeof(string) }));
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Call, typeof(ChatHelper).GetMethod("SendChatMessageFromClient"));
+                
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
+
+
     }
 }

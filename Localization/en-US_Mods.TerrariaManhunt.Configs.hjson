@@ -55,6 +55,17 @@ TerrariaManhuntSettings: {
 		Label: "[i:5095] [c/FF1919:Enable damageable NPCs] [c/327DFF:(except for the Guide)]"
 	}
 
+	AnnounceAchievements: {
+		Tooltip:
+			'''
+			Achievements that players receive will be publicly noted in chat.
+			(This will also temporarily reset your achievement progress every session)
+			On: Achievement get messages appear universally.
+			Off: Default Terraria rules are followed.
+			'''
+		Label: "[i:4084] [c/32FF82:Announce achievements in chat]"
+	}
+
 	HideNPCs: {
 		Tooltip:
 			'''

@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Renderers;
+using Terraria.Initializers;
 using Terraria.ModLoader;
 
 namespace TerrariaManhunt
@@ -60,6 +61,10 @@ namespace TerrariaManhunt
                 IL_DropBasedOnExpertMode.TryDroppingItem_DropAttemptInfo_ItemDropRuleResolveAction += HookDropExpert;
                 IL_DropBasedOnMasterMode.CanDrop += HookDropMaster;
                 IL_DropBasedOnMasterMode.TryDroppingItem_DropAttemptInfo_ItemDropRuleResolveAction += HookDropMaster;
+            }
+            if (settings.AnnounceAchievements)
+            {
+                IL_AchievementInitializer.OnAchievementCompleted += ILHookAchievementComplete;
             }
         }
     }

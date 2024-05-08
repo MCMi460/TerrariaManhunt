@@ -27,5 +27,9 @@ namespace TerrariaManhunt.Common.Players
             bool show = (int)reader.ReadByte() == 1;
             showTracker = show;
         }
+
+        public override void OnEnterWorld()
+        {
+        }
     }
 }
