@@ -6,6 +6,7 @@ This mod includes the following features:
 - [i:393] A working hunter compass
 - [i:264] Hidden player map icons & death icons
 - [i:29] Hidden player healthbars
+- [i:4084] Public achievements (that temporarily reset for games)
 - [i:795] Friendly-fire
 - [i:867] Hidden NPC icons
 - [i:5095] Damageable NPCs (to balance out the Nurse)
