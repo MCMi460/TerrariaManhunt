@@ -1,4 +1,6 @@
+using System;
 using Terraria;
+using Terraria.Achievements;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.Renderers;
 using Terraria.Initializers;
@@ -65,6 +67,10 @@ namespace TerrariaManhunt
             if (settings.AnnounceAchievements)
             {
                 IL_AchievementInitializer.OnAchievementCompleted += ILHookAchievementComplete;
+                IL_AchievementManager.ctor += ILHookAchievementConstructor;
+                // Reload achievement manager -- warning: scary!
+                Main.Achievements.GetType().GetConstructor(Type.EmptyTypes).Invoke(Main.Achievements, new object[] { });
+                AchievementInitializer.Load();
             }
         }
     }

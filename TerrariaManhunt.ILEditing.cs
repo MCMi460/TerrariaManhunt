@@ -34,7 +34,6 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                MonoModHooks.DumpIL(ModContent.GetInstance<TerrariaManhunt>(), il);
                 throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
             }
         }
@@ -326,7 +325,7 @@ namespace TerrariaManhunt
             }
         }
 
-        // Blocks old achievement method
+        // Rewrite of achievement announcement method
         public static void ILHookAchievementComplete(ILContext il)
         {
             try
@@ -349,6 +348,23 @@ namespace TerrariaManhunt
             }
         }
 
+        // Use different achievement file to prevent overwriting user's progress
+        public static void ILHookAchievementConstructor(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
 
+                c.GotoNext(i => i.MatchLdstr("achievements.dat"));
+                c.Index++;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldstr, "achievements.terrariamanhunt.dat");
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+            }
+        }
     }
 }

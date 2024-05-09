@@ -30,6 +30,10 @@ namespace TerrariaManhunt.Common.Players
 
         public override void OnEnterWorld()
         {
+            if (ModContent.GetInstance<TerrariaManhuntSettings>().AnnounceAchievements)
+            {
+                Main.Achievements.ClearAll();
+            }
         }
     }
 }
