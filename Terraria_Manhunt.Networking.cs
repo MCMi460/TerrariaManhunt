@@ -1,11 +1,11 @@
-﻿using TerrariaManhunt.Common.Players;
+﻿using Terraria_Manhunt.Common.Players;
 using System.IO;
 using Terraria;
 using Terraria.ID;
 
-namespace TerrariaManhunt
+namespace Terraria_Manhunt
 {
-    partial class TerrariaManhunt
+    partial class Terraria_Manhunt
     {
         internal enum MessageType : byte
         {

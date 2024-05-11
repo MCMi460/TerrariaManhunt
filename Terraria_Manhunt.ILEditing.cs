@@ -4,11 +4,11 @@ using Terraria;
 using Terraria.Chat;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
-using TerrariaManhunt.Common.Players;
+using Terraria_Manhunt.Common.Players;
 
-namespace TerrariaManhunt
+namespace Terraria_Manhunt
 {
-    public partial class TerrariaManhunt : Mod
+    public partial class Terraria_Manhunt : Mod
     {
         public static void HookDrawPlayerHead(ILContext il)
         {
@@ -34,7 +34,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -49,7 +49,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -80,7 +80,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -101,7 +101,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -130,7 +130,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -161,7 +161,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -182,7 +182,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -203,7 +203,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -226,7 +226,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -242,7 +242,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -258,7 +258,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -283,7 +283,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -302,7 +302,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -321,7 +321,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -344,7 +344,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
 
@@ -363,7 +363,7 @@ namespace TerrariaManhunt
             }
             catch (Exception e)
             {
-                throw new ILPatchFailureException(ModContent.GetInstance<TerrariaManhunt>(), il, e);
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
     }

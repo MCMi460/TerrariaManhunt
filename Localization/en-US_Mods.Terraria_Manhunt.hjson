@@ -1,0 +1,114 @@
+InfoDisplays.TrackerInfoDisplay.DisplayName: Tracker Info Display
+
+Configs: {
+	TerrariaManhuntSettings: {
+		DisplayName: Terraria Manhunt Settings
+
+		Headers: {
+			Visuals: Visuals Header
+			Damage: Damage Header
+			Miscellaneous: Miscellaneous Header
+		}
+
+		HidePlayers: {
+			Label: "[i:264] [c/32FF82:Hide player heads on map]"
+			Tooltip:
+				'''
+				Player heads that do not share a team with you are hidden on the map.
+				On: Unfriendly player heads are hidden.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		HideHealthBars: {
+			Label: "[i:29] [c/32FF82:Hide other players' healthbars]"
+			Tooltip:
+				'''
+				This includes teamed players.
+				On: Other players' healthbars are hidden.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		HideDeathMarkers: {
+			Label: "[i:1175] [c/32FF82:Hide death markers on map]"
+			Tooltip:
+				'''
+				Still shows death markers of players on the same team.
+				On: Unfriendly death markers are hidden.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		HideNPCs: {
+			Label: "[i:867] [c/32FF82:Hide NPC heads on map]"
+			Tooltip:
+				'''
+				So that the whereabouts of NPCs are not public knowledge.
+				On: All NPCs are hidden from the map entirely.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		AnnounceAchievements: {
+			Label: "[i:4084] [c/32FF82:Announce achievements in chat]"
+			Tooltip:
+				'''
+				Achievements that players receive will be publicly noted in chat.
+				(This will also temporarily reset your achievement progress every session)
+				On: Achievement get messages appear universally.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		HurtNPCs: {
+			Label: "[i:5095] [c/FF1919:Enable damageable NPCs] [c/327DFF:(except for the Guide)]"
+			Tooltip:
+				'''
+				This is meant to balance the nurse.
+				On: All town NPCs can be hurt by players.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		FriendlyFire: {
+			Label: "[i:795] [c/FF1919:Enable friendly-fire]"
+			Tooltip:
+				'''
+				Players that share a team with you can now be caught in the cross-fire.
+				On: All players that share a team can hurt each other
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		MasterDrops: {
+			Label: "[i:3322] [c/FF1919:Drop Master Mode items]"
+			Tooltip:
+				'''
+				This allows Master Mode items to drop, even when on a Normal Mode world.
+				On: Master Mode lootbags/items drop.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		DisableTelePot: {
+			Label: "[i:2351] [c/FF00A0:Disable Teleportation Potions]"
+			Tooltip:
+				'''
+				Teleportation Potions' effects are replaced with those of a Recall Potion.
+				On: Teleportation Potions act like Recall Potions.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
+		DisallowSpawn: {
+			Label: "[i:224] [c/FF00A0:Disallow target from setting spawn]"
+			Tooltip:
+				'''
+				The target can no longer set their spawn point for free teleportation.
+				On: Target cannot set their spawn point.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+	}
+}

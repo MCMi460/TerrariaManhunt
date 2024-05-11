@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 
-namespace TerrariaManhunt.Common.GlobalNPCs
+namespace Terraria_Manhunt.Common.GlobalNPCs
 {
     public class Guide : GlobalNPC
     {

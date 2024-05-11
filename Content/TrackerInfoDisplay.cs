@@ -1,9 +1,9 @@
-﻿using TerrariaManhunt.Common.Players;
+﻿using Terraria_Manhunt.Common.Players;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace TerrariaManhunt.Content
+namespace Terraria_Manhunt.Content
 {
     // Add tracker information
     public class TrackerInfoDisplay : InfoDisplay

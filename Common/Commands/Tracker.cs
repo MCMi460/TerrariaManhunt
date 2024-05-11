@@ -2,10 +2,10 @@
 using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
-using TerrariaManhunt.Common.Players;
+using Terraria_Manhunt.Common.Players;
 using System.Linq;
 
-namespace TerrariaManhunt.Common.Commands
+namespace Terraria_Manhunt.Common.Commands
 {
     public class Tracker : ModCommand
     {

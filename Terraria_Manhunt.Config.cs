@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace TerrariaManhunt
+namespace Terraria_Manhunt
 {
     public class TerrariaManhuntSettings : ModConfig
     {

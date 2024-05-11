@@ -6,9 +6,9 @@ using Terraria.Graphics.Renderers;
 using Terraria.Initializers;
 using Terraria.ModLoader;
 
-namespace TerrariaManhunt
+namespace Terraria_Manhunt
 {
-    public partial class TerrariaManhunt : Mod
+    public partial class Terraria_Manhunt : Mod
     {
         public override void Load()
         {
