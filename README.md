@@ -32,7 +32,7 @@ Table of Contents:
 
 <h3 id="workshop">Download on the Steam Workshop</h3>
 
-[**Go to this link and subscribe to the mod!**](#unpublished_currently)  
+[**Go to this link and subscribe to the mod!**](https://steamcommunity.com/sharedfiles/filedetails/?id=3244072026)  
 ...or search for it in the Mod Browser!
 
 <h3 id="buildMod">Build the Mod Yourself</h3>

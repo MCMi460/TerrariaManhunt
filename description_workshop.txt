@@ -17,6 +17,6 @@ This mod includes the following features:
 - Expert and Master Mode drops on Normal Mode worlds
 - ...and more planned! All of the above are toggleable!
 
-Check out the GitHub page below or support me on the Steam Workshop!
+Check out the [url=https://github.com/MCMi460/TerrariaManhunt]GitHub page[/url] or support me on the Steam Workshop!
 
 Happy Manhunting!
