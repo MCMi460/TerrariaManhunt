@@ -348,18 +348,14 @@ namespace Terraria_Manhunt
             }
         }
 
-        // Use different achievement file to prevent overwriting user's progress
-        public static void ILHookAchievementConstructor(ILContext il)
+        // Instantly end writing to achievements.dat
+        public static void ILHookAchievementSave(ILContext il)
         {
             try
             {
                 var c = new ILCursor(il);
 
-                c.GotoNext(i => i.MatchLdstr("achievements.dat"));
-                c.Index++;
-
-                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
-                c.Emit(Mono.Cecil.Cil.OpCodes.Ldstr, "achievements.terrariamanhunt.dat");
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
             }
             catch (Exception e)
             {
