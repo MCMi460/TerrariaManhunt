@@ -38,7 +38,7 @@ namespace Terraria_Manhunt.Common.Commands
             }
             else if (args.Length == 0)
             {
-                throw new UsageException("Please choose a subcommand!");
+                throw new UsageException("Type \"/tracker help\" for help!");
             }
             else if (args.Length > 1 && args[0] != "set")
             {
@@ -121,7 +121,7 @@ namespace Terraria_Manhunt.Common.Commands
                     caller.Reply(Usage, Color.Red);
                     break;
                 default:
-                    throw new UsageException("Invalid subcommand detected!");
+                    throw new UsageException("Invalid subcommand ... Type \"/tracker help\" for help!");
             }
         }
     }

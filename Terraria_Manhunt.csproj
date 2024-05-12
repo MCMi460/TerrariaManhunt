@@ -9,5 +9,6 @@
     <None Remove="Content\TrackerInfoDisplay.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Localization\" />
   </ItemGroup>
 </Project>
