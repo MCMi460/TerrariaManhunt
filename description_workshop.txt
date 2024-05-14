@@ -20,3 +20,6 @@ This mod includes the following features:
 Check out the [url=https://github.com/MCMi460/TerrariaManhunt]GitHub page[/url] or support me on the Steam Workshop!
 
 Happy Manhunting!
+
+[i]If you'd like to use this mod in a video, please credit me by posting the link to the Steam Workshop page, like below:[/i]
+[quote=an example Youtube video]Terraria Manhunt mod: https://steamcommunity.com/sharedfiles/filedetails/?id=3244072026[/quote]

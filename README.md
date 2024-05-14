@@ -19,6 +19,9 @@ This mod includes the following features:
 
 Happy Manhunting!
 
+*If you'd like to use this mod in a video, please credit me by posting the link to the Steam Workshop page, like below:*
+> Terraria Manhunt mod: https://steamcommunity.com/sharedfiles/filedetails/?id=3244072026
+
 ---
 
 ## How to use?
