@@ -61,6 +61,11 @@ namespace Terraria_Manhunt.Common.Commands
                     caller.Reply("Displaying tracker!", Color.Yellow);
                     break;
                 case "set":
+                    if (args.Length < 2)
+                    {
+                        throw new UsageException("Please choose a player to track!");
+                    }
+
                     string trackedName = string.Join(" ", args.Skip(1));
 
                     foreach (var plr in Main.ActivePlayers)

@@ -72,6 +72,8 @@ In my opinion, for the best gameplay experience:
 ---
 
 ## Planned features list
+- Mod menu for choosing tracker
+	- Will include options for mandatory headstarts, etc.
 - Hide boss spawn messages/healthbars
 	- Default: Disabled
 
