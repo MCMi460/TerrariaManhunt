@@ -9,6 +9,8 @@ namespace Terraria_Manhunt
 {
     public partial class Terraria_Manhunt : Mod
     {
+        public static bool shownMultiplayerMessage = false;
+
         public override void Load()
         {
             TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>();

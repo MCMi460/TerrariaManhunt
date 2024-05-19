@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace Terraria_Manhunt.Common.Players
 {
@@ -40,6 +41,15 @@ namespace Terraria_Manhunt.Common.Players
             {
                 Main.player[Main.myPlayer].hostile = true;
                 NetMessage.SendData(MessageID.TogglePVP, -1, -1, null, Main.myPlayer);
+            }
+            if (Main.netMode == NetmodeID.SinglePlayer)
+            {
+                Terraria_Manhunt.SendMessage("Terraria Manhunt: Most functionality is disabled on singleplayer.", Color.Violet);
+            }
+            else if (!Terraria_Manhunt.shownMultiplayerMessage)
+            {
+                Terraria_Manhunt.SendMessage("Terraria Manhunt: To use the tracker, type \"/tracker help\".\n * Thanks for your support!", Color.Violet);
+                Terraria_Manhunt.shownMultiplayerMessage = true;
             }
         }
     }
