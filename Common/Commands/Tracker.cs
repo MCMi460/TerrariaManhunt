@@ -45,7 +45,7 @@ namespace Terraria_Manhunt.Common.Commands
                 throw new UsageException("Cannot take more than one parameter!");
             }
 
-            TrackedPlayerSync player = caller.Player.GetModPlayer<TrackedPlayerSync>();
+            ManhuntPlayer player = caller.Player.GetModPlayer<ManhuntPlayer>();
             bool found = false;
 
             switch (args[0])
@@ -81,7 +81,7 @@ namespace Terraria_Manhunt.Common.Commands
                     {
                         foreach (var plr in Main.ActivePlayers)
                         {
-                            TrackedPlayerSync modPlayer = plr.GetModPlayer<TrackedPlayerSync>();
+                            ManhuntPlayer modPlayer = plr.GetModPlayer<ManhuntPlayer>();
                             modPlayer.trackedPlayer = player.trackedPlayer;
                             modPlayer.SyncPlayer(plr.whoAmI, caller.Player.whoAmI, true);
                         }
@@ -105,7 +105,7 @@ namespace Terraria_Manhunt.Common.Commands
                 case "clear":
                     foreach (var plr in Main.ActivePlayers)
                     {
-                        TrackedPlayerSync modPlayer = plr.GetModPlayer<TrackedPlayerSync>();
+                        ManhuntPlayer modPlayer = plr.GetModPlayer<ManhuntPlayer>();
                         if (modPlayer.trackedPlayer < 255)
                         {
                             found = true;

@@ -119,7 +119,7 @@ namespace Terraria_Manhunt
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ldfld, typeof(Player).GetField(nameof(Player.whoAmI)));
 
                 // Check if the current player is the target
-                c.EmitDelegate<Func<int, bool>>(i => Main.player[i].GetModPlayer<TrackedPlayerSync>().trackedPlayer == i);
+                c.EmitDelegate<Func<int, bool>>(i => Main.player[i].GetModPlayer<ManhuntPlayer>().trackedPlayer == i);
 
                 // If not, move on to set the spawn point
                 c.Emit(Mono.Cecil.Cil.OpCodes.Brfalse, label);
@@ -148,7 +148,7 @@ namespace Terraria_Manhunt
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ldfld, typeof(Player).GetField(nameof(Player.whoAmI)));
 
                 // Check if the current player is the target
-                c.EmitDelegate<Func<int, bool>>(i => Main.player[i].GetModPlayer<TrackedPlayerSync>().trackedPlayer == i);
+                c.EmitDelegate<Func<int, bool>>(i => Main.player[i].GetModPlayer<ManhuntPlayer>().trackedPlayer == i);
 
                 // If not, move on to use the teleportation potion
                 c.Emit(Mono.Cecil.Cil.OpCodes.Brfalse, label);

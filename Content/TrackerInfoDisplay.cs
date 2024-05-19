@@ -13,14 +13,14 @@ namespace Terraria_Manhunt.Content
         // Determines if tracker is displayed or not
         public override bool Active()
         {
-            return Main.CurrentPlayer.GetModPlayer<TrackedPlayerSync>().showTracker;
+            return Main.CurrentPlayer.GetModPlayer<ManhuntPlayer>().showTracker;
         }
 
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)
         {
             displayColor = Color.White;
             string displayInfo = "";
-            TrackedPlayerSync modPlayer = Main.CurrentPlayer.GetModPlayer<TrackedPlayerSync>();
+            ManhuntPlayer modPlayer = Main.CurrentPlayer.GetModPlayer<ManhuntPlayer>();
 
             if (modPlayer.trackedPlayer < 255)
             {

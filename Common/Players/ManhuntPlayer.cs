@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 namespace Terraria_Manhunt.Common.Players
 {
     // This syncs the client with the server and vice versa
-    public class TrackedPlayerSync : ModPlayer
+    public class ManhuntPlayer : ModPlayer
     {
         public bool showTracker = true;
         public int trackedPlayer = 255;

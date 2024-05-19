@@ -20,7 +20,7 @@ namespace Terraria_Manhunt
                 case MessageType.UpdateTargetedPlayer:
 
                     byte playerNumber = reader.ReadByte();
-                    TrackedPlayerSync player = Main.player[playerNumber].GetModPlayer<TrackedPlayerSync>();
+                    ManhuntPlayer player = Main.player[playerNumber].GetModPlayer<ManhuntPlayer>();
                     player.ReceivePlayerSync(reader);
 
                     if (Main.netMode == NetmodeID.Server)
