@@ -52,9 +52,27 @@ namespace Terraria_Manhunt
         [ReloadRequired]
         public bool AnnounceAchievements { get; set; }
 
+        /*
+        [Label("[i:893] [c/32FF82:Share hunter map data]")]
+        [Tooltip("Players on a team will share new map data.\n"
+            + "On: New map data updates apply to all teamed players.\n"
+            + "Off: Default Terraria rules are followed.")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool ShareMap { get; set; }
+        */
+
 
         [Header("Damage")]
 
+
+        [Label("[i:4] [c/FF1919:Force PvP]")]
+        [Tooltip("All players join with PvP automatically enabled.\n"
+            + "On: PvP is eternally on.\n"
+            + "Off: Default Terraria rules are followed.")]
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool ForcePvP { get; set; }
 
         [Label("[i:5095] [c/FF1919:Enable damageable NPCs] [c/327DFF:(except for the Guide)]")]
         [Tooltip("This is meant to balance the nurse.\n"

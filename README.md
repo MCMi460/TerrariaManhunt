@@ -79,6 +79,8 @@ In my opinion, for the best gameplay experience:
 	- Will include options for mandatory headstarts, etc.
 - Hide boss spawn messages/healthbars
 	- Default: Disabled
+- Share map data between hunters
+	- Default: Enabled
 
 ## Todo list
 - Fix new players joining not receiving target player

@@ -61,6 +61,16 @@ Configs: {
 				'''
 		}
 
+		ForcePvP: {
+			Label: "[i:4] [c/FF1919:Force PvP]"
+			Tooltip:
+				'''
+				All players join with PvP automatically enabled.
+				On: PvP is eternally on.
+				Off: Default Terraria rules are followed.
+				'''
+		}
+
 		HurtNPCs: {
 			Label: "[i:5095] [c/FF1919:Enable damageable NPCs] [c/327DFF:(except for the Guide)]"
 			Tooltip:

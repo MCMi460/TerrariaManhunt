@@ -362,5 +362,24 @@ namespace Terraria_Manhunt
                 throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
+
+        // Disables changing of PvP status
+        public static void ILHookEndPvPChange(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.GotoNext(i => i.MatchLdsfld<Main>("mouseLeft"));
+                c.Index += 1;
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Pop);
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_I4, 0);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
+            }
+        }
     }
 }

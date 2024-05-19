@@ -69,6 +69,10 @@ namespace Terraria_Manhunt
                 // Prevent saving -- much safer and more sane way to handle this
                 IL_AchievementManager.Save_string_bool += ILHookAchievementSave;
             }
+            if (settings.ForcePvP)
+            {
+                IL_Main.DrawPVPIcons += ILHookEndPvPChange;
+            }
         }
 
         public override void Unload()

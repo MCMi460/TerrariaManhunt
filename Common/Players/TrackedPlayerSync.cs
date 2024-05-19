@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Terraria_Manhunt.Common.Players
@@ -30,9 +31,15 @@ namespace Terraria_Manhunt.Common.Players
 
         public override void OnEnterWorld()
         {
-            if (ModContent.GetInstance<TerrariaManhuntSettings>().AnnounceAchievements)
+            TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>();
+            if (settings.AnnounceAchievements)
             {
                 Main.Achievements.ClearAll();
+            }
+            if (settings.ForcePvP && Main.netMode == NetmodeID.MultiplayerClient)
+            {
+                Main.player[Main.myPlayer].hostile = true;
+                NetMessage.SendData(MessageID.TogglePVP, -1, -1, null, Main.myPlayer);
             }
         }
     }
