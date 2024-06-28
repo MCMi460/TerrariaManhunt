@@ -75,6 +75,10 @@ namespace Terraria_Manhunt
             {
                 IL_Main.DrawPVPIcons += ILHookEndPvPChange;
             }
+            if (settings.LuckBoost > 0f)
+            {
+                //MonoModHooks.Modify(typeof(Player).GetMethod("get_NormalizedLuck"), ILHookLuckClamp);
+            }
         }
 
         public override void Unload()

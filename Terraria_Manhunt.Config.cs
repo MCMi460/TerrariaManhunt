@@ -116,5 +116,15 @@ namespace Terraria_Manhunt
         [DefaultValue(true)]
         [ReloadRequired]
         public bool DisallowSpawn { get; set; }
+
+        [Label("[i:4022] [c/FF00A0:Artificially increase luck]")]
+        [Tooltip("The target receives an increase of luck specified. A little goes a long way.\n"
+            + "0.1-20: The target receives a luck boost.\n"
+            + "0: Default Terraria rules are followed.")]
+        [SliderColor(255, 191, 0)]
+        [Range(0f, 20f)]
+        [Increment(.1f)]
+        [DefaultValue(0f)]
+        public float LuckBoost { get; set; }
     }
 }

@@ -120,5 +120,15 @@ Configs: {
 				Off: Default Terraria rules are followed.
 				'''
 		}
+
+		LuckBoost: {
+			Label: "[i:4022] [c/FF00A0:Artificially increase luck]"
+			Tooltip:
+				'''
+				The target receives an increase of luck specified. A little goes a long way.
+				0.1-20: The target receives a luck boost.
+				0: Default Terraria rules are followed.
+				'''
+		}
 	}
 }

@@ -381,5 +381,22 @@ namespace Terraria_Manhunt
                 throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
             }
         }
+
+        // Modifies normalized luck ... unused
+        public static void ILHookLuckClamp(ILContext il)
+        {
+            try
+            {
+                var c = new ILCursor(il);
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldc_R4, 50.0f);
+
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ret);
+            }
+            catch (Exception e)
+            {
+                throw new ILPatchFailureException(ModContent.GetInstance<Terraria_Manhunt>(), il, e);
+            }
+        }
     }
 }
