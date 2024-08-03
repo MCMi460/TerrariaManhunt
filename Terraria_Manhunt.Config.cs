@@ -126,5 +126,25 @@ namespace Terraria_Manhunt
         [Increment(.1f)]
         [DefaultValue(0f)]
         public float LuckBoost { get; set; }
+
+        [Label("[i:54] [c/FF00A0:Speed boost (Speedrunner)]")]
+        [Tooltip("The target receives an increase in speed.\n"
+            + "1.01-2: The speed boost multiplier.\n"
+            + "1: Default Terraria rules are followed.")]
+        [SliderColor(60, 168, 50)]
+        [Range(1f, 2f)]
+        [Increment(.01f)]
+        [DefaultValue(1f)]
+        public float SpeedBoostRunner { get; set; }
+
+        [Label("[i:405] [c/FF00A0:Speed boost (Hunters)]")]
+        [Tooltip("The hunters receive an increase in speed.\n"
+            + "1.01-2: The speed boost multiplier.\n"
+            + "1: Default Terraria rules are followed.")]
+        [SliderColor(255, 20, 44)]
+        [Range(1f, 2f)]
+        [Increment(.01f)]
+        [DefaultValue(1f)]
+        public float SpeedBoostHunters { get; set; }
     }
 }

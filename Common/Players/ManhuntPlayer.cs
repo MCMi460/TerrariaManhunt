@@ -33,13 +33,9 @@ namespace Terraria_Manhunt.Common.Players
             byte whoAmI = reader.ReadByte();
             trackedPlayer = whoAmI;
             if (trackedPlayer == Main.myPlayer)
-            {
                 this.OnSpeedrunner();
-            }
             else
-            {
                 this.OnHunter();
-            }
             bool show = (int)reader.ReadByte() == 1;
             showTracker = show;
         }
@@ -48,18 +44,14 @@ namespace Terraria_Manhunt.Common.Players
         {
             TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>();
             if (settings.AnnounceAchievements)
-            {
                 Main.Achievements.ClearAll();
-            }
             if (settings.ForcePvP && Main.netMode == NetmodeID.MultiplayerClient)
             {
                 Main.player[Main.myPlayer].hostile = true;
                 NetMessage.SendData(MessageID.TogglePVP, -1, -1, null, Main.myPlayer);
             }
             if (Main.netMode == NetmodeID.SinglePlayer)
-            {
                 Terraria_Manhunt.SendMessage("Terraria Manhunt: Most functionality is disabled on singleplayer.", Color.Violet);
-            }
             else if (!Terraria_Manhunt.shownMultiplayerMessage)
             {
                 Terraria_Manhunt.SendMessage("Terraria Manhunt: To use the tracker, type \"/tracker help\".\n * Thanks for your support!", Color.Violet);
@@ -93,12 +85,20 @@ namespace Terraria_Manhunt.Common.Players
         private void OnSpeedrunner()
         {
             Terraria_Manhunt.SendMessage("You are now the speedrunner!", Color.Purple);
-            TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>();
+            TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>(); // unused for now
         }
 
         private void OnHunter()
         {
             //Terraria_Manhunt.SendMessage("You are now a hunter!", Color.Purple);
+        }
+
+        public override void PostUpdateMiscEffects()
+        {
+            TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>();
+            Main.LocalPlayer.moveSpeed *= trackedPlayer == Main.myPlayer ? settings.SpeedBoostRunner : settings.SpeedBoostHunters;
+
+            base.PostUpdateMiscEffects();
         }
     }
 }

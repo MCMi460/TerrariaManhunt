@@ -11,6 +11,8 @@ This mod includes the following features:
 - Public achievements (that temporarily reset for games)
 - Friendly-fire
 - Hidden NPC icons
+- A luck modifier
+- Speed boosts for the runner/hunters
 - Damageable NPCs (to balance out the Nurse)
 - Disabling spawn points for the Speedrunner
 - Disabling random teleportation potions for the Speedrunner

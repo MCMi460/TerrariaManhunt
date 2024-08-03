@@ -11,6 +11,8 @@ This mod includes the following features:
 - Public achievements (that temporarily reset for games)
 - Friendly-fire
 - Hidden NPC icons
+- A luck modifier
+- Speed boosts for the runner/hunters
 - Damageable NPCs (to balance out the Nurse)
 - Disabling spawn points for the Speedrunner
 - Disabling random teleportation potions for the Speedrunner
@@ -23,3 +25,5 @@ Happy Manhunting!
 
 [i]If you'd like to use this mod in a video, please credit me by posting the link to the Steam Workshop page, like below:[/i]
 [quote=an example Youtube video]Terraria Manhunt mod: https://steamcommunity.com/sharedfiles/filedetails/?id=3244072026[/quote]
+
+For help on using the mod, [url=https://github.com/MCMi460/TerrariaManhunt?tab=readme-ov-file#how-to-use]please see the GitHub page.[/url]

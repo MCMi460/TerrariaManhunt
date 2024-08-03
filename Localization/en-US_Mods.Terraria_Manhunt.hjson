@@ -130,5 +130,25 @@ Configs: {
 				0: Default Terraria rules are followed.
 				'''
 		}
+
+		SpeedBoostRunner: {
+			Label: "[i:54] [c/FF00A0:Speed boost (Speedrunner)]"
+			Tooltip:
+				'''
+				The target receives an increase in speed.
+				1.01-2: The speed boost multiplier.
+				1: Default Terraria rules are followed.
+				'''
+		}
+
+		SpeedBoostHunters: {
+			Label: "[i:405] [c/FF00A0:Speed boost (Hunters)]"
+			Tooltip:
+				'''
+				The hunters receive an increase in speed.
+				1.01-2: The speed boost multiplier.
+				1: Default Terraria rules are followed.
+				'''
+		}
 	}
 }
