@@ -21,8 +21,9 @@ namespace Terraria_Manhunt.Common.Players
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
         {
             ModPacket packet = Mod.GetPacket();
-            packet.Write((byte)Terraria_Manhunt.MessageType.UpdateTargetedPlayer);
+            packet.Write((byte)Terraria_Manhunt.MessageType.SyncPlayer);
             packet.Write((byte)Player.whoAmI);
+            packet.Write((byte)(newPlayer ? 1 : 0));
             packet.Write((byte)trackedPlayer);
             packet.Write((byte)(showTracker ? 1 : 0));
             packet.Send(toWho, fromWho);
@@ -30,14 +31,12 @@ namespace Terraria_Manhunt.Common.Players
 
         public void ReceivePlayerSync(BinaryReader reader)
         {
-            byte whoAmI = reader.ReadByte();
-            trackedPlayer = whoAmI;
+            trackedPlayer = (int) reader.ReadByte();
             if (trackedPlayer == Main.myPlayer)
                 this.OnSpeedrunner();
             else
                 this.OnHunter();
-            bool show = (int)reader.ReadByte() == 1;
-            showTracker = show;
+            showTracker = (int)reader.ReadByte() == 1;
         }
 
         public override void OnEnterWorld()
@@ -85,7 +84,7 @@ namespace Terraria_Manhunt.Common.Players
         private void OnSpeedrunner()
         {
             Terraria_Manhunt.SendMessage("You are now the speedrunner!", Color.Purple);
-            TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>(); // unused for now
+            //TerrariaManhuntSettings settings = ModContent.GetInstance<TerrariaManhuntSettings>();
         }
 
         private void OnHunter()

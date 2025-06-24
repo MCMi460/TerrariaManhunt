@@ -9,6 +9,8 @@ namespace Terraria_Manhunt.Common.Commands
 {
     public class Tracker : ModCommand
     {
+        public override bool IsCaseSensitive => true;
+
         // Works on server in multiplayer
         public override CommandType Type
             => CommandType.Server;
@@ -83,7 +85,7 @@ namespace Terraria_Manhunt.Common.Commands
                         {
                             ManhuntPlayer modPlayer = plr.GetModPlayer<ManhuntPlayer>();
                             modPlayer.trackedPlayer = player.trackedPlayer;
-                            modPlayer.SyncPlayer(plr.whoAmI, caller.Player.whoAmI, true);
+                            modPlayer.SyncPlayer(plr.whoAmI, caller.Player.whoAmI, false);
                         }
                         caller.Reply($"Set {Main.player[player.trackedPlayer].name} to the tracked player", Color.Yellow);
                     }
@@ -94,13 +96,9 @@ namespace Terraria_Manhunt.Common.Commands
                     break;
                 case "get":
                     if (player.trackedPlayer < 255)
-                    {
                         caller.Reply($"{Main.player[player.trackedPlayer].name} is the tracked player", Color.Yellow);
-                    }
                     else
-                    {
                         caller.Reply("There isn't a player being tracked!", Color.Yellow);
-                    }
                     break;
                 case "clear":
                     foreach (var plr in Main.ActivePlayers)
@@ -114,13 +112,9 @@ namespace Terraria_Manhunt.Common.Commands
                         }
                     }
                     if (found)
-                    {
                         caller.Reply("Cleared the tracked player!", Color.Yellow);
-                    }
                     else
-                    {
                         caller.Reply("There isn't a player being tracked right now!", Color.Yellow);
-                    }
                     break;
                 case "help":
                     caller.Reply(Usage, Color.Red);

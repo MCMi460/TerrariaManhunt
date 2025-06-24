@@ -9,7 +9,7 @@ namespace Terraria_Manhunt
     {
         internal enum MessageType : byte
         {
-            UpdateTargetedPlayer
+            SyncPlayer
         }
         public override void HandlePacket(BinaryReader reader, int whoAmI)
         {
@@ -17,16 +17,33 @@ namespace Terraria_Manhunt
 
             switch (msgType)
             {
-                case MessageType.UpdateTargetedPlayer:
-
+                case MessageType.SyncPlayer:
                     byte playerNumber = reader.ReadByte();
                     ManhuntPlayer player = Main.player[playerNumber].GetModPlayer<ManhuntPlayer>();
+                    bool newPlayer = (int)reader.ReadByte() == 1;
                     player.ReceivePlayerSync(reader);
+
+                    bool updateNewPlayer = false;
+                    if (newPlayer)
+                    {
+                        foreach (var plr in Main.ActivePlayers)
+                        {
+                            ManhuntPlayer modPlayer = plr.GetModPlayer<ManhuntPlayer>();
+                            if (modPlayer.trackedPlayer < 255)
+                            {
+                                player.trackedPlayer = modPlayer.trackedPlayer;
+                                updateNewPlayer = true;
+                                break;
+                            }
+                        }
+                    }
 
                     if (Main.netMode == NetmodeID.Server)
                     {
                         // Forward the changes to the other clients
                         player.SyncPlayer(-1, whoAmI, false);
+                        if (updateNewPlayer)
+                            player.SyncPlayer(playerNumber, whoAmI, false);
                     }
                     break;
                 default:

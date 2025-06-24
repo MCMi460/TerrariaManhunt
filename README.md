@@ -62,7 +62,7 @@ In my opinion, for the best gameplay experience:
 
 <h3 id="configSetup">Toggling Features</h3>
 
-1. After installing the mod, go to Worshop > Manage Mods
+1. After installing the mod, go to Workshop > Manage Mods
 2. You will see a cog icon. Click it
 3. Click "Terraria Manhunt Settings" on the right side
 4. Enable/disable the features you'd like. Hover over each to read extra information
@@ -85,4 +85,3 @@ In my opinion, for the best gameplay experience:
 	- Default: Enabled
 
 ## Todo list
-- Fix new players joining not receiving target player
