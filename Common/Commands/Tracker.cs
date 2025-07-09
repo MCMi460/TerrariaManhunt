@@ -72,7 +72,7 @@ namespace Terraria_Manhunt.Common.Commands
 
                     foreach (var plr in Main.ActivePlayers)
                     {
-                        if (plr.name == trackedName)
+                        if (plr.name.Equals(trackedName))
                         {
                             player.trackedPlayer = plr.whoAmI;
                             found = true;
